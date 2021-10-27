@@ -1,3 +1,5 @@
+package ru.mephi.hw3;
+
 import java.util.ArrayList;
 
 
@@ -15,12 +17,12 @@ public class Employee {
     private String state;
     private String code;
 
-    Employee(){
+    public Employee(){
     }
 
     @Override
     public String toString() {
-        return "Employee : " +
+        return "ru.mephi.laba3.Employee : " +
                 "givenName: " + givenName +
                 "  |  surName: " + surName +
                 "  |  age: " + age +

@@ -1,3 +1,5 @@
+package ru.mephi.hw3;
+
 import java.util.HashMap;
 import java.util.*;
 

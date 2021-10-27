@@ -1,3 +1,5 @@
+package ru.mephi.hw3;
+
 import java.util.ArrayList;
 
 public class Accountant {
@@ -26,7 +28,6 @@ public class Accountant {
 
         //salary for different dept
         for (Dept dept : Dept.values()) {
-
             System.out.println("=========== " + "SALARY FOR " + dept + " ===========");
             list.stream()
                     .filter(e -> e.getDept() == dept)

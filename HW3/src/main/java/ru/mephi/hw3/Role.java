@@ -1,3 +1,5 @@
+package ru.mephi.hw3;
+
 public enum Role {
 
     STAFF(0.1d),
