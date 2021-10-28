@@ -4,25 +4,23 @@ import java.util.ArrayList;
 
 public class Accountant {
 
-    Accountant(){
+    Accountant() {
     }
 
-    public static void paySalary(Employee employee) {
+    public static void paySalary(ArrayList<Employee> list) {
 
-        ArrayList<Employee> list = employee.createShortList();
         Salary salary = new Salary();
 
 
         //salary for managers
         System.out.println("=========== " + "SALARY FOR MANAGERS" + " ===========");
         list.stream()
-                .filter(e -> e.getRole() == Role.MANAGER)
+                .filter(e -> e.getRole().equals(Role.MANAGER))
                 .forEach(e -> System.out.println(
-                      e.getGivenName() + "  "
-                    + e.getSurName()
-                    + ": " + e.getRole()
-                    + " -- " + salary.getSalary(e.getDept(), Role.MANAGER)));
-
+                        e.getGivenName() + "  "
+                                + e.getSurName()
+                                + ": " + e.getRole()
+                                + " -- " + salary.getSalary(e.getDept(), Role.MANAGER)));
         System.out.println(" ");
 
 
@@ -30,32 +28,31 @@ public class Accountant {
         for (Dept dept : Dept.values()) {
             System.out.println("=========== " + "SALARY FOR " + dept + " ===========");
             list.stream()
-                    .filter(e -> e.getDept() == dept)
+                    .filter(e -> e.getDept().equals(dept))
                     .forEach(e -> System.out.println(
-                          e.getGivenName() + "  "
-                        + e.getSurName()
-                        + ":" + e.getDept()
-                        + " -- " + salary.getSalary(dept, e.getRole())));
+                            e.getGivenName() + "  "
+                                    + e.getSurName()
+                                    + ":" + e.getDept()
+                                    + " -- " + salary.getSalary(dept, e.getRole())));
             System.out.println(" ");
 
         }
     }
 
-    public static void payPremium(Employee employee) {
+    public static void payPremium(ArrayList<Employee> list) {
 
-        ArrayList<Employee> list = employee.createShortList();
         Salary salary = new Salary();
 
         //premium for woman
         System.out.println("=========== " + "PREMIUM FOR WOMAN" + " ===========");
         list.stream()
-                .filter(e -> e.getGender() == Gender.FEMALE)
+                .filter(e -> e.getGender().equals(Gender.FEMALE))
                 .forEach(e -> System.out.println(
-                      e.getGivenName() + " -- "
-                    + e.getSurName()
-                    + ": " + e.getGender()
-                    + " -- " + (salary.getSalary(e.getDept(), e.getRole()))
-                    * (1 + e.getRole().getRate())));
+                        e.getGivenName() + " -- "
+                                + e.getSurName()
+                                + ": " + e.getGender()
+                                + " -- " + (salary.getSalary(e.getDept(), e.getRole()))
+                                * (1 + e.getRole().getRate())));
 
         System.out.println(" ");
         //premium for >30 and from different departments
@@ -77,13 +74,13 @@ public class Accountant {
         //premium for staff
         System.out.println("=========== " + "PREMIUM FOR STAFF" + " ===========");
         list.stream()
-                .filter(e -> e.getRole() == Role.STAFF)
+                .filter(e -> e.getRole().equals(Role.STAFF))
                 .forEach(e -> System.out.println(
-                          e.getGivenName() + "  "
-                        + e.getSurName()
-                        + ": " + e.getRole()
-                        + " -- " + ((salary.getSalary(e.getDept(), Role.MANAGER))
-                        * (1 + e.getRole().getRate()))));
+                        e.getGivenName() + "  "
+                                + e.getSurName()
+                                + ": " + e.getRole()
+                                + " -- " + ((salary.getSalary(e.getDept(), Role.MANAGER))
+                                * (1 + e.getRole().getRate()))));
         System.out.println(" ");
 
     }

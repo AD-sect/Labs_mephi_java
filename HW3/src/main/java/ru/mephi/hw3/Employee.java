@@ -2,8 +2,8 @@ package ru.mephi.hw3;
 
 import java.util.ArrayList;
 
-
 public class Employee {
+
     private String givenName;
     private String surName;
     private int age;
@@ -17,7 +17,8 @@ public class Employee {
     private String state;
     private String code;
 
-    public Employee(){
+    private Employee(){
+
     }
 
     @Override
@@ -146,10 +147,24 @@ public class Employee {
                 .setCode("222")
                 .build());
 
+        list.add(new Builder()
+                .setGivenName("Vera")
+                .setSurName("Klimova")
+                .setAge(31)
+                .setGender(Gender.FEMALE)
+                .setDept(Dept.MARKETING)
+                .setRole(Role.MANAGER)
+                .seteMail("kukurusa@ya.ru")
+                .setPhone("89273450707")
+                .setAddress("Moscow")
+                .setCity("SPB")
+                .setState("UA")
+                .setCode("222")
+                .build());
+
         return list;
 
     }
-
 
     public String getGivenName() {
         return givenName;

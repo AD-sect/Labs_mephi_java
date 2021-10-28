@@ -23,7 +23,7 @@ public class Functions {
 
         Function<Employee, String> name = emp -> emp.getGivenName() + " " + emp.getSurName();
 
-        BiPredicate<Employee, Role> checkRole = (person, role) -> person.getRole() == role;
+        BiPredicate<Employee, Role> checkRole = (person, role) -> person.getRole() == role;//сравнение исправить 
 
         Consumer<Employee> checkManagers = n -> System.out.println(name.apply(n) + " MANAGER - " +
                 checkRole.test(n, Role.MANAGER));
@@ -101,7 +101,7 @@ public class Functions {
     public static void main(String[] args) {
         Employee employee = new Employee();
         ArrayList<Employee> list = employee.createShortList();
-        
+
         System.out.println("=========== " + "LIST OF EMPLOYEE" + " ===========");
         System.out.println(list);
 

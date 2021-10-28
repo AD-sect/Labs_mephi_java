@@ -43,10 +43,10 @@ public class Salary {
     }
 
     public Map<Role, Integer> getDeptSalary(Dept dept){
-       if (dept == Dept.DEVELOPMENT){
+       if (dept.equals(Dept.DEVELOPMENT)){
            return development;
        } else
-       if (dept == Dept.MARKETING){
+       if (dept.equals(Dept.MARKETING)){
            return marketing;
        } else{
            return testing;
