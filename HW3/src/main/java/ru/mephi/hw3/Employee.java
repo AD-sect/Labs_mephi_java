@@ -16,6 +16,7 @@ public class Employee {
     private String city;
     private String state;
     private String code;
+    private double salary;
 
     private Employee(){
 
@@ -36,6 +37,8 @@ public class Employee {
                 "  |  city: " + city +
                 "  |  state: " + state +
                 "  |  code: " + code +
+                "  |  code: " + salary +
+                " $ " +
                 "\n";
     }
 
@@ -55,6 +58,7 @@ public class Employee {
                 .setCity("Moscow")
                 .setState("CA")
                 .setCode("221")
+                .setSalary(150)
                 .build());
 
         list.add(new Builder()
@@ -70,6 +74,7 @@ public class Employee {
                 .setCity("Mosckow")
                 .setState("CA")
                 .setCode("221")
+                .setSalary(150)
                 .build());
 
         list.add(new Builder()
@@ -85,6 +90,7 @@ public class Employee {
                 .setCity("Mosckow")
                 .setState("CA")
                 .setCode("221")
+                .setSalary(200)
                 .build());
 
         list.add(new Builder()
@@ -100,6 +106,7 @@ public class Employee {
                 .setCity("SPB")
                 .setState("UA")
                 .setCode("222")
+                .setSalary(500)
                 .build());
 
         list.add(new Builder()
@@ -115,6 +122,7 @@ public class Employee {
                 .setCity("SPB")
                 .setState("UA")
                 .setCode("222")
+                .setSalary(200)
                 .build());
 
         list.add(new Builder()
@@ -130,6 +138,7 @@ public class Employee {
                 .setCity("SPB")
                 .setState("UA")
                 .setCode("222")
+                .setSalary(200)
                 .build());
 
         list.add(new Builder()
@@ -145,6 +154,7 @@ public class Employee {
                 .setCity("SPB")
                 .setState("UA")
                 .setCode("222")
+                .setSalary(200)
                 .build());
 
         list.add(new Builder()
@@ -160,6 +170,7 @@ public class Employee {
                 .setCity("SPB")
                 .setState("UA")
                 .setCode("222")
+                .setSalary(350)
                 .build());
 
         return list;
@@ -214,6 +225,63 @@ public class Employee {
         return code;
     }
 
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public void setGivenName(String givenName) {
+        this.givenName = givenName;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public void setDept(Dept dept) {
+        this.dept = dept;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String setPhone(String phone){
+        this.phone = phone;
+        return phone;
+    }
+
     public static class Builder{
 
         private String givenName;
@@ -228,6 +296,7 @@ public class Employee {
         private String city;
         private String state;
         private String code;
+        private double salary;
 
         public Builder setGivenName(String givenName) {
             this.givenName = givenName;
@@ -289,6 +358,11 @@ public class Employee {
             return this;
         }
 
+        public Builder setSalary(double salary) {
+            this.salary = salary;
+            return this;
+        }
+
         public Employee build(){
             Employee employee = new Employee();
 
@@ -304,6 +378,7 @@ public class Employee {
             employee.eMail = this.eMail;
             employee.phone = this.phone;
             employee.state = this.state;
+            employee.salary = this.salary;
             return employee;
         }
     }
